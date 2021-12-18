@@ -5,10 +5,12 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductComponent } from './product/product.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { KasirComponent } from './kasir/kasir.component';
+import { TransaksiComponent } from './transaksi/transaksi.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, ProductComponent],
+  declarations: [DashboardComponent, ProductComponent, KasirComponent, TransaksiComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,

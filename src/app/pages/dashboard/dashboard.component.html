@@ -1,25 +1,31 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-  <a class="navbar-brand" href="/dashboard">Stridia</a>
+  <a class="navbar-brand" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">Stridia</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
   <ul class="navbar-nav">
       <li class="nav-item active">
-      <a class="nav-link" href="/dashboard">Home</a>
+      <a class="nav-link" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">Home</a>
       </li>
       <li class="nav-item">
-      <a class="nav-link" href="/product">Product</a>
+      <a class="nav-link" [routerLink]="['/product']" routerLinkActive="router-link-active">Product</a>
       </li>
       <li class="nav-item">
-      <a class="nav-link" href="/login">Keluar</a>
+      <a class="nav-link" [routerLink]="['/transaksi']" routerLinkActive="router-link-active" >Transaksi</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/kasir']" routerLinkActive="router-link-active" >Kasir</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active" >Keluar</a>
+          </li>
+
   </ul>
   </div>
 </div>
 </nav>
-
 
 
   <div class="container mt-4 px-2">
@@ -51,14 +57,14 @@
   <div class="container mt-5">
     <div class="row">
       <div class="mb-4">
-      <div class="col card shadow-lg mx-3">
-        <div class="card-title text-center mt-3">Total Penjualan Per Hari
-          <div class="card-body">
-            <canvas id="barsChart" width="400" height="400" style="display: block;"></canvas>
+        <div class="col card shadow-lg mx-3">
+          <div class="card-title text-center mt-3">Total Penjualan Per Hari
+            <div class="card-body">
+              <canvas id="barsChart" width="400" height="200" style="display: block;"></canvas>
+            </div>
           </div>
         </div>
       </div>
-    </div>
       <div class="col card shadow-lg mx-3">
         <div class="card-title text-center mt-3">Penjualan Produk
           <div class="card-body">
