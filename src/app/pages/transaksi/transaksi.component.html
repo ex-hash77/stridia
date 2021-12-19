@@ -1,6 +1,6 @@
 <!-- start navigasi -->
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
   <a class="navbar-brand" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">Stridia</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +32,7 @@
 <!-- end navigasi -->
 
 <!-- Start Sidebar -->
-<div class="container-fluid">
+<div class="container-fluid mt-5">
   <div class="row">
     <div class="col-xl-2 py-4">
       <ul class="list-group">
@@ -60,6 +60,201 @@
 
     <!-- content   -->
       <div class="col-xl-10 pt-4">
+        
+          <div class="container">
+            <div class="row">
+              <div class="col-5">
+                <label for="">Mulai</label>
+                 <div class="input-group mb-3">
+                   <input type="date" class="form-control" id="tgl1" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                   <span class="input-group-text text-light bg-primary" id="basic-addon2"><i class="bi bi-calendar3"></i></span>
+                  </div>
+                </div>
+                <div class="col-5">
+                  <label for="">Akhir</label>
+                  <div class="input-group mb-3">
+                    <input type="date" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <span class="input-group-text text-light bg-primary" id="basic-addon2"><i class="bi bi-calendar3"></i></span>
+                  </div>
+                </div>
+                <div class="col mt-4">
+                  <button type="submit" class="btn btn-primary">Proses</button>
+                </div>
+            </div>
+          </div>
+        
 
+        <!-- value -->
+        
+        <div class="mt-1 text-center">
+          <div class="row">
+            <div class="col card mx-3 shadow-lg">
+              <div class="card-title mt-3">
+                Total Nominal Transaksi
+              </div>
+                <div class="card-body">
+                  163000
+                </div>
+              </div>
+
+                <div class="col card mx-3 shadow-lg">
+                  <div class="card-title mt-3">
+                     Total Transaksi
+                  </div>
+                    <div class="card-body">
+                     4
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="container text-center mt-5">
+                <table class="table">
+                  <thead>
+                    <tr class="bg-dark text-light">
+                      <th scope="col">Nomor</th>
+                      <th scope="col">ID Transaksi</th>
+                      <th scope="col">Waktu</th>
+                      <th scope="col">Kasir</th>
+                      <th scope="col">Total Transaksi</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>1</th>
+                      <th>5dbc23ace</th>
+                      <th>02/12/2021</th>
+                      <th>Khafid</th>
+                      <td>50000</td>
+                      <th><a class="btn btn-secondary " (click)="openPopup()">Info</a> <a class="btn btn-warning mx-1">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></th>
+                    </tr>
+                    <tr>
+                      <th>2</th>
+                      <th>78c8a7dba</th>
+                      <th>10/04/2021</th>
+                      <th>Khafid</th>
+                      <td>45000</td>
+                      <th><a class="btn btn-secondary " (click)="openPopup()">Info</a> <a class="btn btn-warning mx-1">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></th>
+                    </tr>
+                    <tr>
+                      <th>3</th>
+                      <th>dc62aba2</th>
+                      <th>11/20/2021</th>
+                      <th>Khafid</th>
+                      <td>25000</td>
+                      <th><a class="btn btn-secondary" (click)="openPopup()">Info</a> <a class="btn btn-warning mx-1">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></th>
+                    </tr>
+                    <tr>
+                      <th>4</th>
+                      <th>bcd232ad</th>
+                      <th>03/09/2021</th>
+                      <th>khafid</th>
+                      <td>70000</td>
+                      <th><a class="btn btn-secondary" (click)="openPopup()">Info</a> <a class="btn btn-warning mx-1">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></th>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-end">
+                  <li class="page-item"><a class="page-link">Previous</a></li>
+                  <li class="page-item"><a class="page-link">1</a></li>
+                  <li class="page-item"><a class="page-link">2</a></li>
+                  <li class="page-item"><a class="page-link">3</a></li>
+                  <li class="page-item"><a class="page-link">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+
+          <!-- Pop UP transaksi  -->
+
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Detail</h4>
       </div>
+      <div class="modal-body">
+        <div class="row">
+          <p>ID Transaksi</p>
+          <br>
+          <p>5dbc23ace</p>
+          <div class="col">
+            <p>Pendapatan Kotor</p>
+            <p>Rp.25.000</p>
+          </div>
+          <div class="col">
+            <p>Tanggal & Waktu</p>
+            <p>14 Des 2021 13.00</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>Jenis Pembayaran</p>
+            <p>Debit</p>
+          </div>
+          <div class="col">
+            <p>Total</p>
+            <p>5</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>Customer</p>
+            <p>Umum</p>
+          </div>
+          <div class="col">
+            <p>Kasir</p>
+            <p>SAYA</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="container text-center">
+              <table class="table">
+                <thead>
+                  <tr class="bg-dark text-light">
+                    <th scope="col">Nomor</th>
+                    <th scope="col">Produk</th>
+                    <th scope="col">Qty</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>1</th>
+                    <th>SeaFood</th>
+                    <th>1</th>
+                  </tr>
+                  <tr>
+                    <th>2</th>
+                    <th>Nasi goreng</th>
+                    <th>2</th>
+                  </tr>
+                  <tr>
+                    <th>3</th>
+                    <th>Ayam geprek</th>
+                    <th>2</th>
+                  </tr>
+                  <tr>
+                    <th>4</th>
+                    <th>Lemon tea</th>
+                    <th>5</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" 
+                (click)="closePopup()">
+          Close
+        </button>
+      </div>
+    </div>
   </div>
+</div>

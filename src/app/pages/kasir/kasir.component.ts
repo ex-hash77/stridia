@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KasirComponent implements OnInit {
 
+
+  hapus(){
+    confirm('Apakah Anda Yakin Ingin Menghapus')
+  }
   constructor() { }
 
   ngOnInit(): void {

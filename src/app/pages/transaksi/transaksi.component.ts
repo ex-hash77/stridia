@@ -12,4 +12,16 @@ export class TransaksiComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  displayStyle = "none";
+  
+  openPopup() {
+    this.displayStyle = "block";
+  }
+  closePopup() {
+    this.displayStyle = "none";
+  }
+
+  hapus(){
+    alert("Apakah anda yakin ingin menghapus");
+  }
 }

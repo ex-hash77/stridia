@@ -1,6 +1,6 @@
 <!-- start navigasi -->
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark foxed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
   <a class="navbar-brand" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">Stridia</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +32,7 @@
 <!-- end navigasi -->
 
 <!-- Start Sidebar -->
-<div class="container-fluid">
+<div class="container-fluid mt-5">
   <div class="row">
     <div class="col-xl-2 py-4">
       <ul class="list-group">
@@ -64,7 +64,7 @@
               <label for="">Barcode</label>
               <div class="input-group mb-3">
                 <input type="date" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
-                <span class="input-group-text text-light bg-primary" id="basic-addon2"><ion-icon name="calendar"></ion-icon></span>
+                <span class="input-group-text text-light bg-primary" id="basic-addon2"><i class="bi bi-calendar3"></i></span>
               </div>
               <label for="kasir" class=" col-form-label">Kasir</label>
               <input type="text" class="form-control" name="kasir" id="kasir" value="Khafid">
@@ -79,7 +79,7 @@
               <label for="">Barcode</label>
               <div class="input-group mb-3">
                 <input type="text" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
-                <span class="input-group-text bg-primary" id="basic-addon2"><button class="btn btn-primary"><ion-icon name="search-outline"></ion-icon></button></span>
+                <span class="input-group-text bg-primary" id="basic-addon2"><button class="btn btn-primary"><i class="bi bi-search"></i></button></span>
               </div>
                   <label for="qty" class=" col-form-label">Qty</label>
                   <input type="search" class="form-control mb-3" name="qty" id="qty">
@@ -99,45 +99,55 @@
               <tr class="bg-dark text-light">
                 <th scope="col">Nomor</th>
                 <th scope="col">Produk</th>
-                <th scope="col">Kategori</th>
                 <th scope="col">Harga</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Disc</th>
+                <th scope="col">Total</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th>1</th>
-                <th>SeaFood</th>
-                <th>Makanan</th>
-                <th>50000</th>
-                <th><a class="btn btn-warning mx-1" (click)="editPop()">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></th>
+                <td>1</td>
+                <td>SeaFood</td>
+                <td>25000</td>
+                <td>2</td>
+                <td>2500</td>
+                <td>47500</td>
+                <td><a class="btn btn-warning mx-1">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></td>
               </tr>
               <tr>
-                <th>2</th>
-                <th>Nasi goreng</th>
-                <th>Makanan</th>
-                <th>15000</th>
-                <th><a class="btn btn-warning mx-1" (click)="editPop()">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></th>
+                <td>2</td>
+                <td>Nasi goreng</td>
+                <td>15000</td>
+                <td>3</td>
+                <td>0</td>
+                <td>21000</td>
+                <td><a class="btn btn-warning mx-1">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></td>
               </tr>
               <tr>
-                <th>3</th>
-                <th>Ayam geprek</th>
-                <th>Makanan</th>
-                <th>15000</th>
-                <th><a class="btn btn-warning mx-1" (click)="editPop()">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></th>
+                <td>3</td>
+                <td>Ayam geprek</td>
+                <td>10000</td>
+                <td>1</td>
+                <td>1000</td>
+                <td>9000</td>
+                <td><a class="btn btn-warning mx-1">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></td>
               </tr>
               <tr>
-                <th>4</th>
-                <th>Lemon tea</th>
-                <th>Minuman</th>
-                <th>12000</th>
-                <th><a class="btn btn-warning mx-1" (click)="editPop()">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></th>
+                <td>4</td>
+                <td>Lemon tea</td>
+                <td>10000</td>
+                <td>4</td>
+                <td>0</td>
+                <td>10000</td>
+                <td><a class="btn btn-warning mx-1">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></td>
               </tr>
             </tbody>
           </table>
         </div>
-
-        <!-- <div class="card col-4 text-center mb-3">
+        <div class="col-xl-10">
+        <div class="card col-4 text-center mb-3">
           <div class="row">
             <div class="col col-auto">
             <ul>
@@ -172,34 +182,8 @@
               </ul>
             </div>
           </div>
-        </div> -->
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-xl-2 py-4">
-              <ul class="list-group card text-center">
-                <!-- produk -->
-                <li class="list-group">
-                  <label for="">Sub Total</label>
-                  <input type="text" name="sbtot" id="sbtot" value="48000">
-                </li>
-                <li class="list-group-item">Kelola Produk</li>
-                <li class="list-group-item">Diskon</li>
-                <li class="list-group-item">Kategory Produk</li>
-              </ul>
-            </div>
-
-            <div class="col-xl-10 pt-4">
-              <div class="row">
-                
-                <div class="col card shadow-lg mx-3">
-                  <div class="card-title text-center mt-3">Penjualan Produk
-                    <div class="card-body">
-                    </div>
-                  </div>
-
-                </div>
-            </div>
-       
+        </div>
+        </div>
        </div>
     </div>
     
