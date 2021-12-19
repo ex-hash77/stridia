@@ -7,6 +7,24 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
+
+
+  //filtering kategori
+  function ($scope) {
+    $scope.product=[
+      {
+        id:1,
+        ketegori:"makanan"
+      },
+      {
+        id:2,
+        kategori:"minuman"
+      }
+    ]
+  }
+
+
+  //validation form
   productBarang:FormGroup;
   constructor(private fb: FormBuilder) {
     this.buatProduk();
@@ -21,6 +39,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  //Modal Pop Up
   displayStyle = "none";
   
   openPopup() {
@@ -29,9 +48,16 @@ export class ProductComponent implements OnInit {
   closePopup() {
     this.displayStyle = "none";
   }
-
+  
+  //alert hapus button
   hapus(){
     confirm("apakah anda yakin ingin menghapus");
   }
-  
+
+  editPop() {
+    this.displayStyle = "block";
+  }
+  editClose() {
+    this.displayStyle = "none";
+  }
 }

@@ -1,27 +1,65 @@
+<!-- start navigasi -->
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-    <a class="navbar-brand" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">Stridia</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-        <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">Home</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/product']" routerLinkActive="router-link-active">Product</a>
-        </li>
-        <li class="nav-item">
+  <div class="container">
+  <a class="navbar-brand" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">Stridia</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+  <ul class="navbar-nav">
+      <li class="nav-item active">
+      <a class="nav-link" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">Home</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/product']" routerLinkActive="router-link-active">Product</a>
+      </li>
+      <!-- <li class="nav-item">
         <a class="nav-link" [routerLink]="['/transaksi']" routerLinkActive="router-link-active" >Transaksi</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/kasir']" routerLinkActive="router-link-active" >Kasir</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active" >Keluar</a>
-            </li>
-    </ul>
-    </div>
+          
+      <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active">Keluar</a>
+      </li>
+  </ul>
   </div>
-  </nav>
+</div>
+</nav>
+
+<!-- end navigasi -->
+
+<!-- Start Sidebar -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-2 py-4">
+      <ul class="list-group">
+        <!-- produk -->
+        <li class="list-group-item list-group-item-primary">Produk</li>
+        <li class="list-group-item">Kelola Produk</li>
+        <li class="list-group-item">Diskon</li>
+        <li class="list-group-item">Kategory Produk</li>
+        <!-- Toko -->
+        <li class="list-group-item list-group-item-primary">Kelola Toko</li>
+        <li class="list-group-item">Pembayaran </li>
+        <li class="list-group-item" >Outlet</li>
+        <li class="list-group-item">Inventory</li>
+        <!-- Transaksi -->
+        <li class="list-group-item list-group-item-primary"><a class="nav-link" [routerLink]="['/transaksi']" routerLinkActive="router-link-active">Transaksi</a></li>
+        <li class="list-group-item">Penjualan</li>
+        <li class="list-group-item">Pembelian</li>
+        <!-- Pengaturan -->
+        <li class="list-group-item list-group-item-primary">Pengaturan</li>
+        <li class="list-group-item">Karyawan</li>
+      </ul>
+    </div>
+
+    <!-- end sidebar -->
+
+    <!-- content   -->
+      <div class="col-xl-10 pt-4">
+
+      </div>
+  </div>
