@@ -68,7 +68,27 @@ export class ProductComponent implements OnInit {
   products=[
     {
       "id":1,
-      "":23,
+      "product":"Nasi Goreng",
+      "kategori":"Makanan",
+      "harga":15000
+    },
+    {
+      "id":2,
+      "product":"Ayam Geprek",
+      "kategori":"Makanan",
+      "harga":12500
+    },
+    {
+      "id":3,
+      "product":"Ice Tea",
+      "kategori":"Minuman",
+      "harga":7000
+    },
+    {
+      "id":4,
+      "product":"Hapitos",
+      "kategori":"Snack",
+      "harga":5000
     }
   ]
 }

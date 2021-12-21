@@ -18,7 +18,7 @@ export class KasirComponent implements OnInit {
   users=[
     {
       "id":1,
-      "produk":"nasi goreng",
+      "produk":"Nasi Goreng",
       "harga":12000,
       "qty":1,
       "disc":0,
@@ -26,19 +26,19 @@ export class KasirComponent implements OnInit {
     },
     {
       "id":2,
-      "produk":"nasi goreng",
+      "produk":"Ayam Geprek",
       "harga":12000,
-      "qty":1,
+      "qty":4,
       "disc":0,
-      "total":12000
+      "total":48000
     },
     {
       "id":3,
-      "produk":"nasi goreng",
-      "harga":12000,
-      "qty":1,
+      "produk":"Ice Tea",
+      "harga":7000,
+      "qty":4,
       "disc":0,
-      "total":12000
+      "total":28000
     },
   ]
 }

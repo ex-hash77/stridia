@@ -2,29 +2,29 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="/">Stridia</a>
+    <a class="navbar-brand" [routerLink]="['/dashboard']" routerLinkActive="router-link-active" >Stridia</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="/">Home</a>
+              <a class="nav-link" [routerLink]="['/dashboard']" routerLinkActive="router-link-active" >Home</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="/product">Product</a>
+               <a class="nav-link" [routerLink]="['/product']" routerLinkActive="router-link-active" >Product</a>
             </li>
             <!-- <li class="nav-item">
                <a class="nav-link" [routerLink]="['/transaksi']" routerLinkActive="router-link-active" >Transaksi</a>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link" href="/kasir">Kasir</a>
+              <a class="nav-link" [routerLink]="['/kasir']" routerLinkActive="router-link-active" >Kasir</a>
             </li>
             
              <li class="nav-item">
-              <a class="nav-link" href="login">Keluar</a>
+              <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active" >Keluar</a>
             </li>
-    </ul>
+      </ul>
     </div>
   </div>
 </nav>
@@ -37,7 +37,7 @@
     <div class="col-xl-2 py-4">
       <ul class="list-group">
         <!-- produk -->
-        <li class="list-group-item list-group-item-primary">Produk</li>
+        <li class="list-group-item list-group-item-primary"> <a class="nav-link" [routerLink]="['/product']" routerLinkActive="router-link-active" >Produk</a> </li>
         <li class="list-group-item">Kelola Produk</li>
         <li class="list-group-item">Diskon</li>
         <li class="list-group-item">Kategory Produk</li>
@@ -62,37 +62,37 @@
           <div class="row">
             <div class="col card mx-3  shadow-lg pb-3 pt-1"> 
               <label for="" class="mt-1">Tanggal</label>
-              <div class="input-group">
+                <div class="input-group">
                 
-                <input type="date" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
-                <span class="input-group-text text-light bg-primary" id="basic-addon2"><i class="bi bi-calendar3"></i></span>
+                  <input type="date" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+                  <span class="input-group-text text-light bg-primary" id="basic-addon2"><i class="bi bi-calendar3"></i></span>
+                </div>
+                <label for="kasir" class=" col-form-label">Kasir</label>
+                  <input type="text" class="form-control" name="kasir" id="kasir" value="saya">
+                  <label for="customer" class="mt-1">Customer</label>
+                  <select class="form-control" id="customer">
+                    <option>Umum</option>
+                    <option>Private</option>
+                    <option>Public</option>
+                  </select>
               </div>
-              <label for="kasir" class=" col-form-label">Kasir</label>
-              <input type="text" class="form-control" name="kasir" id="kasir" value="saya">
-                <label for="customer" class="mt-1">Customer</label>
-                <select class="form-control" id="customer">
-                  <option>Umum</option>
-                  <option>Private</option>
-                  <option>Public</option>
-                </select>
-            </div>
-            <div class="col card mx-3 shadow-lg pb-3 pt-1">
-              <label for="">Barcode</label>
-              <div class="input-group mb-3">
-                <input type="text" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
-                <span class="input-group-text bg-primary" id="basic-addon2"><button class="btn btn-primary"><i class="bi bi-search"></i></button></span>
-              </div>
+              <div class="col card mx-3 shadow-lg pb-3 pt-1">
+                <label for="">Barcode</label>
+                 <div class="input-group mb-3">
+                  <input type="text" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+                  <span class="input-group-text bg-primary" id="basic-addon2"><button class="btn btn-primary"><i class="bi bi-search"></i></button></span>
+               </div>
                   <label for="qty" class=" col-form-label">Qty</label>
                   <input type="search" class="form-control mb-3" name="qty" id="qty">
                   <button type="submit" class="btn btn-primary">Add</button>
-            </div>
-            <div class="col card mx-3 shadow-lg">
-              <div class="card-title mt-4">Total</div>
-              <div class="card-body">
-                <h1 class="text-center">15.000</h1>
               </div>
+                <div class="col card mx-3 shadow-lg">
+                  <div class="card-title mt-4">Total</div>
+                    <div class="card-body">
+                      <h1 class="text-center">15.000</h1>
+                    </div>
+                </div>
            </div>
-          </div>
          </div>
 
          <!-- start table -->
@@ -118,42 +118,7 @@
                 <td>{{user.disc}}</td>
                 <td>{{user.total}}</td>
                 <td><a class="btn btn-warning mx-1">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></td>
-                </tr>
-                <!-- <td>1</td>
-                <td>SeaFood</td>
-                <td>25000</td>
-                <td>2</td>
-                <td>2500</td>
-                <td>47500</td>
-                <td><a class="btn btn-warning mx-1">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td>Nasi goreng</td>
-                <td>15000</td>
-                <td>3</td>
-                <td>0</td>
-                <td>21000</td>
-                <td><a class="btn btn-warning mx-1">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Ayam geprek</td>
-                <td>10000</td>
-                <td>1</td>
-                <td>1000</td>
-                <td>9000</td>
-                <td><a class="btn btn-warning mx-1">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Lemon tea</td>
-                <td>10000</td>
-                <td>4</td>
-                <td>0</td>
-                <td>10000</td>
-                <td><a class="btn btn-warning mx-1">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></td>
-              </tr> -->
             </tbody>
           </table>
         </div>
