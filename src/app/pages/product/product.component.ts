@@ -48,16 +48,27 @@ export class ProductComponent implements OnInit {
   closePopup() {
     this.displayStyle = "none";
   }
+
+  displayStyle1 = "none";
   
   //alert hapus button
   hapus(){
     confirm("apakah anda yakin ingin menghapus");
   }
-
+  // edit popo up
   editPop() {
-    this.displayStyle = "block";
+    this.displayStyle1 = "block";
   }
   editClose() {
-    this.displayStyle = "none";
+    this.displayStyle1 = "none";
   }
+
+  // array produt
+
+  products=[
+    {
+      "id":1,
+      "":23,
+    }
+  ]
 }

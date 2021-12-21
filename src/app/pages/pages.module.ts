@@ -7,10 +7,12 @@ import { ProductComponent } from './product/product.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { KasirComponent } from './kasir/kasir.component';
 import { TransaksiComponent } from './transaksi/transaksi.component';
+import { LaporanPenjualanComponent } from './laporan-penjualan/laporan-penjualan.component';
+import { CetakLaporanPenjualanComponent } from './cetak-laporan-penjualan/cetak-laporan-penjualan.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, ProductComponent, KasirComponent, TransaksiComponent],
+  declarations: [DashboardComponent, ProductComponent, KasirComponent, TransaksiComponent, LaporanPenjualanComponent, CetakLaporanPenjualanComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,

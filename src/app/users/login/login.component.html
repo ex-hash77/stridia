@@ -10,7 +10,7 @@
                     <div *ngIf="profileForm.controls['email'].errors.required">
                       Harap Masukkan Email
                     </div>
-                    <div **ngIf="profileForm.controls['email'].errors.email">
+                    <div *ngIf="profileForm.controls['email'].errors.email">
                       Bukan email Contoh email@example.com
                     </div>
                   </div>
@@ -24,7 +24,7 @@
               <div *ngIf="profileForm.controls['password'].errors.required">
                 Harap Masukkan Password
               </div>
-              <div **ngIf="profileForm.controls['password'].errors.minlength">
+              <div *ngIf="profileForm.controls['password'].errors.minlength">
                 Password Lebih Dari 6
               </div>
             </div>

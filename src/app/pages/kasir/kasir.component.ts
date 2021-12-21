@@ -15,5 +15,30 @@ export class KasirComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  users=[
+    {
+      "id":1,
+      "produk":"nasi goreng",
+      "harga":12000,
+      "qty":1,
+      "disc":0,
+      "total":12000
+    },
+    {
+      "id":2,
+      "produk":"nasi goreng",
+      "harga":12000,
+      "qty":1,
+      "disc":0,
+      "total":12000
+    },
+    {
+      "id":3,
+      "produk":"nasi goreng",
+      "harga":12000,
+      "qty":1,
+      "disc":0,
+      "total":12000
+    },
+  ]
 }

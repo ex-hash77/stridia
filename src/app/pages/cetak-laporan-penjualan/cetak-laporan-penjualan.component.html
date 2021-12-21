@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-2">
+            <img src="../../assets/img/logo-laporan.png" width="100" height="100" alt="logo" class="rounded">
+        </div>
+        <div class="col" >
+            <h1><a href="/dashboard">Laporan Penjualan Stridia Coffee</a></h1>
+            <p>Periode: 01-10-2021 s/d 33-11-2021</p>
+        </div>
+    </div>
+</div>
+<div class="container text-center mt-5">
+    <table class="table table-striped">
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">ID transaksi</th>
+        <th scope="col">Waktu</th>
+        <th scope="col">Kasir</th>
+        <th scope="col">Total Transaksi</th>
+        <th scope="col">Jenis Pembayaran</th>
+        <th scope="col">Customer</th>
+      </tr>
+      <tbody>
+        <tr *ngFor="let customer of customers; index as i;">
+          <td>{{i}}</td>
+          <td>{{customer.idTransaksi}}</td>
+          <td>{{customer.waktu}}</td>
+          <td>{{customer.kasir}}</td>
+          <td>{{customer.totalTrans}}</td>
+          <td>{{customer.jnsPembayaran}}</td>
+          <td>{{customer.customer}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

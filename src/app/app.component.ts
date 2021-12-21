@@ -8,14 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'stridia';
-  // profileForm:FormGroup;
-
+  
   constructor(){
   }
-  // createForm(){
-  //   this.profileForm = this.fb.group({
-  //     email:['', Validators.required, Validators.email],
-  //     password:['', Validators.required, Validators.minLength(6)]
-  //   })
-  // }
 }

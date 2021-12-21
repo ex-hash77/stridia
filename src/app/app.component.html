@@ -1,27 +1,2 @@
-<!-- help
-
-<form [formGroup]="profileForm">
-    <label for="">Email</label>
-    <input type="text" name="email" id="email" formControlName="email" required>
-    <div *ngIf="profileForm.controls['email'].invalid && (profileForm.controls['email'].dirty || profileForm.controls['email'].touched)" class="text-danger">
-        <div *ngIf="profileForm.controls['email'].errors.required">
-            email required
-        </div>
-    </div>
-    <label for="">PAssword</label>
-    <input type="password" name="password" id="password" formControlName="password" required>
-    <div *ngIf="profileForm.controls['password'].invalid && (profileForm.controls['password'].dirty || profileForm.controls['password'].touched)" class="text-danger">
-        <div *ngIf="profileForm.controls['password'].errors.required">
-            Password Required
-        </div>
-        <div *ngIf="profileForm.controls['password'].errors.minlength">
-            Password kurang dari 6
-        </div>
-    </div>
-    <button type="submit" [disabled]="profileForm.pristine || profileForm.invalid" class="btn btn-primary"> SAve</button>
-</form>
-<br />
-<p>Form value: {{ profileForm.value | json }}</p>
-<p>Form status: {{ profileForm.status | json }}</p> -->
 
 <router-outlet></router-outlet>
