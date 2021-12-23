@@ -92,11 +92,13 @@
     </thead>
     <tbody>
       <tr *ngFor="let product of products; index as i">
+        <div *ngIf="product.kategori == 'Makanan'">
         <td>{{i}}</td>
         <td>{{product.product}}</td>
         <td>{{product.kategori}}</td>
         <td>{{product.harga}}</td>
         <th><a class="btn btn-warning mx-1" (click)="editPop()">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></th>
+        </div>
       </tr>
     </tbody>
   </table>

@@ -117,36 +117,22 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th>1</th>
-                      <th>5dbc23ace</th>
-                      <th>02/12/2021</th>
-                      <th>Khafid</th>
-                      <td>50000</td>
-                      <th><a class="btn btn-secondary " (click)="openPopup()">Info</a> <a class="btn btn-warning mx-1">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></th>
-                    </tr>
-                    <tr>
-                      <th>2</th>
-                      <th>78c8a7dba</th>
-                      <th>10/04/2021</th>
-                      <th>Khafid</th>
-                      <td>45000</td>
-                      <th><a class="btn btn-secondary " (click)="openPopup()">Info</a> <a class="btn btn-warning mx-1">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></th>
-                    </tr>
-                    <tr>
-                      <th>3</th>
-                      <th>dc62aba2</th>
-                      <th>11/20/2021</th>
-                      <th>Khafid</th>
-                      <td>25000</td>
-                      <th><a class="btn btn-secondary" (click)="openPopup()">Info</a> <a class="btn btn-warning mx-1">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></th>
-                    </tr>
-                    <tr>
-                      <th>4</th>
-                      <th>bcd232ad</th>
-                      <th>03/09/2021</th>
-                      <th>khafid</th>
-                      <td>70000</td>
+                    <tr *ngFor="let trans of transaksi">
+                      <th>
+                        {{trans.id}}
+                      </th>
+                      <th>
+                        {{trans.idTrans}}
+                      </th>
+                      <th>
+                        {{trans.waktu}}
+                      </th>
+                      <th>
+                        {{trans.kasir}}
+                      </th>
+                      <td>
+                        {{trans.totalTrans}}
+                      </td>
                       <th><a class="btn btn-secondary" (click)="openPopup()">Info</a> <a class="btn btn-warning mx-1">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></th>
                     </tr>
                   </tbody>

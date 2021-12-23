@@ -107,12 +107,13 @@
           <div class="row">
             <div class="col">
               <button class="btn btn-primary mx-3" (click)="cetakLaporan()">Tampilkan</button>
-              <button class="btn btn-danger mx-3">PDF</button>
+              <button class="btn btn-danger mx-3" pdf-download-button pdf-name="laporan.pdf" pdf-element-id="element-to-download" creating-pdf-class-name="generating">PDF</button>
               <button class="btn btn-success mx-3">Excel</button>
             </div>
           </div>
         </div>
-        <div class="container text-center mt-4">
+        <div class="text-center mt-4">
+          <div pdf-content="element-to-download" class="container">
         <table class="table">
           <tr>
             <th scope="col">No</th>
@@ -135,6 +136,7 @@
             </tr>
           </tbody>
         </table>
+      </div>
       </div>
       </div>
   
