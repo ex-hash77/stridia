@@ -90,5 +90,8 @@ export class ProductComponent implements OnInit {
       "kategori":"Snack",
       "harga":5000
     }
-  ]
+  ];
+  
+
+  
 }

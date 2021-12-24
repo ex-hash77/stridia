@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as jspdf from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-laporan-penjualan',
@@ -10,6 +12,8 @@ export class LaporanPenjualanComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+   
+
   }
   customers=[
     {
@@ -39,10 +43,41 @@ export class LaporanPenjualanComponent implements OnInit {
       "jnsPembayaran":"Tunai",
       "customer":"Member"
     },
+    {
+      "id":4,
+      "idTransaksi":"db12cd",
+      "kasir":"dia",
+      "waktu":"05/04/2021",
+      "totalTrans":"22900",
+      "jnsPembayaran":"debit",
+      "customer":"Member"
+    },
   ];
 
   cetakLaporan(){
     window.location.href='/cetaklaporan'
   }
   
+  download(){
+      var element = document.getElementById('table')
+      html2canvas(element).then((canvas)=>{
+        console.log(canvas );
+        var imgWidth = 208;
+        var pageHeigh = 295;
+        var imgHeigh = canvas.height * imgWidth / canvas.width;
+        var heighLeft = imgHeigh;
+        var date = new Date();
+        var dtr = "" + date;
+
+        var imgData = canvas.toDataURL('image/png');
+
+        var doc = new jspdf.jsPDF('p', 'mm', 'a4')
+        var position = 20;
+        doc.setFontSize(8)
+        doc.text(dtr,10,10);
+        doc.addImage(imgData,'PNG', 0, position, imgWidth, imgHeigh);
+
+        doc.save("laporan.pdf ");
+      })
+  }
 }

@@ -17,9 +17,9 @@
             <!-- <li class="nav-item">
                <a class="nav-link" [routerLink]="['/transaksi']" routerLinkActive="router-link-active" >Transaksi</a>
             </li> -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" [routerLink]="['/kasir']" routerLinkActive="router-link-active" >Kasir</a>
-            </li>
+            </li> -->
             
              <li class="nav-item">
               <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active" >Keluar</a>
@@ -28,32 +28,34 @@
     </div>
   </div>
 </nav>
-  
-  <!-- end navigasi -->
-  <!-- Start Sidebar -->
-  <div class="container-fluid mt-5">
-    <div class="row">
-      <div class="col-xl-2 py-4">
-        <ul class="list-group">
-          <!-- produk -->
-          <li class="list-group-item list-group-item-primary"><a class="nav-link" [routerLink]="['/product']" routerLinkActive="router-link-active" >Produk</a> </li>
-          <li class="list-group-item">Kelola Produk</li>
-          <li class="list-group-item">Diskon</li>
-          <li class="list-group-item">Kategory Produk</li>
-          <!-- Toko -->
-          <li class="list-group-item list-group-item-primary">Kelola Toko</li>
-          <li class="list-group-item">Pembayaran </li>
-          <li class="list-group-item" >Outlet</li>
-          <li class="list-group-item">Inventory</li>
-          <!-- Transaksi -->
-          <li class="list-group-item list-group-item-primary"><a class="nav-link" href="/transaksi">Transaksi</a></li>
-          <li class="list-group-item">Penjualan</li>
-          <li class="list-group-item">Pembelian</li>
-          <!-- Pengaturan -->
-          <li class="list-group-item list-group-item-primary">Pengaturan</li>
-          <li class="list-group-item">Karyawan</li>
-        </ul>
-      </div>
+
+<!-- end navigasi -->
+<!-- Start Sidebar -->
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-xl-2 py-4">
+      <ul class="list-group">
+        <!-- produk -->
+        <li class="list-group-item list-group-item-primary"> <a class="nav-link" [routerLink]="['/product']" routerLinkActive="router-link-active" > Produk</a></li>
+        <li class="list-group-item">Kelola Produk</li>
+        <li class="list-group-item">Diskon</li>
+        <li class="list-group-item">Kategory Produk</li>
+        <!-- Toko -->
+        <li class="list-group-item list-group-item-primary">Kelola Toko</li>
+        <li class="list-group-item"><a class="nav-link" [routerLink]="['/laporan']" routerLinkActive="router-link-active" class="nav-link" >Pembayaran</a>  </li>
+        <li class="list-group-item" ><a class="nav-link" [routerLink]="['/laporan']" routerLinkActive="router-link-active" >Outlet</a> </li>
+        <li class="list-group-item">Inventory</li>
+        <!-- Transaksi -->
+        <li class="list-group-item list-group-item-primary"><a class="nav-link" href="/transaksi">Transaksi</a></li>
+        <li class="list-group-item"><a class="nav-link" [routerLink]="['/kasir']" routerLinkActive="router-link-active" >Penjualan</a></li>
+        <li class="list-group-item">Pembelian</li>
+        <!-- Pengaturan -->
+        <li class="list-group-item list-group-item-primary">Pengaturan</li>
+        <li class="list-group-item">Karyawan</li>
+      </ul>
+    </div>
+
+
       <div class="col-xl-10 pt-4">
         <div class="container">
           <div class="row">
@@ -107,14 +109,14 @@
           <div class="row">
             <div class="col">
               <button class="btn btn-primary mx-3" (click)="cetakLaporan()">Tampilkan</button>
-              <button class="btn btn-danger mx-3" pdf-download-button pdf-name="laporan.pdf" pdf-element-id="element-to-download" creating-pdf-class-name="generating">PDF</button>
+              <button class="btn btn-danger mx-3" (click)="download()">PDF</button>
               <button class="btn btn-success mx-3">Excel</button>
             </div>
           </div>
         </div>
         <div class="text-center mt-4">
           <div pdf-content="element-to-download" class="container">
-        <table class="table">
+        <table id="table" class="table">
           <tr>
             <th scope="col">No</th>
             <th scope="col">ID transaksi</th>
@@ -125,8 +127,8 @@
             <th scope="col">Customer</th>
           </tr>
           <tbody>
-            <tr *ngFor="let customer of customers; index as i;">
-              <td>{{i}}</td>
+            <tr *ngFor="let customer of customers;">
+              <td>{{customer.id}}</td>
               <td>{{customer.idTransaksi}}</td>
               <td>{{customer.waktu}}</td>
               <td>{{customer.kasir}}</td>

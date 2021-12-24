@@ -17,10 +17,10 @@
             <!-- <li class="nav-item">
                <a class="nav-link" [routerLink]="['/transaksi']" routerLinkActive="router-link-active" >Transaksi</a>
             </li> -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" [routerLink]="['/kasir']" routerLinkActive="router-link-active" >Kasir</a>
             </li>
-            
+             -->
              <li class="nav-item">
               <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active" >Keluar</a>
             </li>
@@ -29,7 +29,6 @@
   </div>
 </nav>
 
-
 <!-- end navigasi -->
 <!-- Start Sidebar -->
 <div class="container-fluid mt-5">
@@ -37,18 +36,18 @@
     <div class="col-xl-2 py-4">
       <ul class="list-group">
         <!-- produk -->
-        <li class="list-group-item list-group-item-primary"><a class="nav-link" [routerLink]="['/product']" routerLinkActive="router-link-active"  class="nav-link"> Produk</a></li>
+        <li class="list-group-item list-group-item-primary"> <a class="nav-link" [routerLink]="['/product']" routerLinkActive="router-link-active" > Produk</a></li>
         <li class="list-group-item">Kelola Produk</li>
         <li class="list-group-item">Diskon</li>
         <li class="list-group-item">Kategory Produk</li>
         <!-- Toko -->
         <li class="list-group-item list-group-item-primary">Kelola Toko</li>
-        <li class="list-group-item">Pembayaran </li>
-        <li class="list-group-item" >Outlet</li>
+        <li class="list-group-item"><a class="nav-link" [routerLink]="['/laporan']" routerLinkActive="router-link-active" class="nav-link" >Pembayaran</a>  </li>
+        <li class="list-group-item" ><a class="nav-link" [routerLink]="['/laporan']" routerLinkActive="router-link-active" >Outlet</a> </li>
         <li class="list-group-item">Inventory</li>
         <!-- Transaksi -->
         <li class="list-group-item list-group-item-primary"><a class="nav-link" href="/transaksi">Transaksi</a></li>
-        <li class="list-group-item">Penjualan</li>
+        <li class="list-group-item"><a class="nav-link" [routerLink]="['/kasir']" routerLinkActive="router-link-active" >Penjualan</a></li>
         <li class="list-group-item">Pembelian</li>
         <!-- Pengaturan -->
         <li class="list-group-item list-group-item-primary">Pengaturan</li>
@@ -80,7 +79,7 @@
 
   <!-- start tabel  -->
 <div class="container text-center">
-  <table class="table">
+  <table class="table" id="daftarIsi">
     <thead>
       <tr class="bg-dark text-light">
         <th scope="col">Nomor</th>
@@ -90,15 +89,13 @@
         <th scope="col">Action</th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let product of products; index as i">
-        <div *ngIf="product.kategori == 'Makanan'">
-        <td>{{i}}</td>
+    <tbody  *ngFor="let product of products; index as i">
+      <tr>
+        <td>{{product.id}}</td>
         <td>{{product.product}}</td>
         <td>{{product.kategori}}</td>
         <td>{{product.harga}}</td>
-        <th><a class="btn btn-warning mx-1" (click)="editPop()">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></th>
-        </div>
+        <th><a class="btn btn-warning mx-1" (click)="editPop()">Edit</a>    <a href="/hapus" class="btn btn-danger" (click)="hapus()">Hapus</a></th> 
       </tr>
     </tbody>
   </table>
@@ -112,7 +109,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Tambah wou</h4>
+          <h4 class="modal-title">Tambah </h4>
         </div>
         <div class="modal-body">
           <form [formGroup]="productBarang">

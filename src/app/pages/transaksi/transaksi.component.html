@@ -17,9 +17,9 @@
             <!-- <li class="nav-item">
                <a class="nav-link" [routerLink]="['/transaksi']" routerLinkActive="router-link-active" >Transaksi</a>
             </li> -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" [routerLink]="['/kasir']" routerLinkActive="router-link-active" >Kasir</a>
-            </li>
+            </li> -->
             
              <li class="nav-item">
               <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active" >Keluar</a>
@@ -36,18 +36,18 @@
     <div class="col-xl-2 py-4">
       <ul class="list-group">
         <!-- produk -->
-        <li class="list-group-item list-group-item-primary"><a class="nav-link" [routerLink]="['/product']" routerLinkActive="router-link-active" >Produk</a> </li>
+        <li class="list-group-item list-group-item-primary"> <a class="nav-link" [routerLink]="['/product']" routerLinkActive="router-link-active" > Produk</a></li>
         <li class="list-group-item">Kelola Produk</li>
         <li class="list-group-item">Diskon</li>
         <li class="list-group-item">Kategory Produk</li>
         <!-- Toko -->
         <li class="list-group-item list-group-item-primary">Kelola Toko</li>
-        <li class="list-group-item">Pembayaran </li>
-        <li class="list-group-item" >Outlet</li>
+        <li class="list-group-item"><a class="nav-link" [routerLink]="['/laporan']" routerLinkActive="router-link-active" class="nav-link" >Pembayaran</a>  </li>
+        <li class="list-group-item" ><a class="nav-link" [routerLink]="['/laporan']" routerLinkActive="router-link-active" >Outlet</a> </li>
         <li class="list-group-item">Inventory</li>
         <!-- Transaksi -->
         <li class="list-group-item list-group-item-primary"><a class="nav-link" href="/transaksi">Transaksi</a></li>
-        <li class="list-group-item">Penjualan</li>
+        <li class="list-group-item"><a class="nav-link" [routerLink]="['/kasir']" routerLinkActive="router-link-active" >Penjualan</a></li>
         <li class="list-group-item">Pembelian</li>
         <!-- Pengaturan -->
         <li class="list-group-item list-group-item-primary">Pengaturan</li>
